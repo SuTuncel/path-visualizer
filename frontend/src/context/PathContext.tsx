@@ -1,0 +1,3 @@
+PathContextInterface {
+    algorithm: AlgorithmType,
+}
