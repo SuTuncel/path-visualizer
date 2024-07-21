@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { PathContext } from "../context/PathContext";
 
-export const usePathFinding = () => {
+const usePathFinding = () => {
     const context = useContext(PathContext);
 
     if(!context) {
@@ -10,3 +10,5 @@ export const usePathFinding = () => {
 
     return context;
 };
+
+export default usePathFinding;
