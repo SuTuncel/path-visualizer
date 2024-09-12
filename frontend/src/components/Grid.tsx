@@ -1,6 +1,7 @@
 import usePathFinding from "../hooks/usePathFinding";
 import {twMerge} from "tailwind-merge"; 
 import { MAX_COLS, MAX_ROWS } from "../utils/constants";
+import { Tile } from "./Tile";
 
 const Grid = () => {
     const {grid} = usePathFinding();
@@ -15,10 +16,22 @@ const Grid = () => {
         >
             {grid.map((row, rowIndex) => (
                 <div key={rowIndex} className="flex">
-                    {row.map((tile, tileIndex) => (
-                        <div className="bg-white h-2 w-2 border"/>
+                    {row.map((tile, tileIndex) => {
+                        const {isEnd, isStart, isPath, isTraversed, isWall} = tile;
 
-                    ))}
+                        return (
+                            <Tile
+                                key={tileIndex}
+                                row={tile.row}
+                                col={tile.col}
+                                isEnd={isEnd}
+                                isStart={isStart}
+                                isPath={isPath}
+                                isTraversed={isTraversed}
+                                isWall={isWall}
+                            />
+                        )
+                    })}
                 </div>
             ))}
         </div>
