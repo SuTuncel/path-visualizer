@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { TileContext } from "../context/TileContex";
 
-
 export const useTile = () => {
   const context = useContext(TileContext);
 
