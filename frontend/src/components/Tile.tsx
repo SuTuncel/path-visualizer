@@ -1,5 +1,12 @@
 import { twMerge } from "tailwind-merge";
-import { END_TILE_STYLE, MAX_ROWS, PATH_TILE_STYLE, START_TILE_STYLE, TILE_STYLE, TRAVERSED_TILE_STYLE, WALL_TILE_STYLE } from "../utils/constants";
+import { 
+  END_TILE_STYLE, 
+  MAX_ROWS, 
+  PATH_TILE_STYLE, 
+  START_TILE_STYLE, 
+  TILE_STYLE, 
+  TRAVERSED_TILE_STYLE, 
+  WALL_TILE_STYLE } from "../utils/constants";
 
 export function Tile({
     row,
@@ -34,8 +41,8 @@ export function Tile({
         tileTypeStyle = TILE_STYLE;
       }
 
-    const borderStyle = row === MAX_ROWS - 1 ? 'border-b' : col === 0 ? 'border-l' : ''
-    const edgeStyle = row === MAX_ROWS - 1 &&  col === 0 ? 'border-l' : ''
+    const borderStyle = row === MAX_ROWS - 1 ? "border-b" : col === 0 ? "border-l" : ""
+    const edgeStyle = row === MAX_ROWS - 1 &&  col === 0 ? "order-l" : ""
     
     return (
         <div className={twMerge(tileTypeStyle, borderStyle, edgeStyle)} id={`${row}-${col}`}></div>
